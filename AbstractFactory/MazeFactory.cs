@@ -19,9 +19,13 @@ namespace AbstractFactory
         }
         public virtual Door CreateDoor(Room room1, Room room2)
         {
-            if (room1 == null || room2 == null)
+            if (room1 == null)
             {
-                throw new ArgumentNullException("Комнаты не существует");
+                throw new ArgumentNullException($"Комнаты не существует");
+            }
+            if (room2 == null)
+            {
+                throw new ArgumentNullException($"Комнаты не существует");
             }
             return new Door(room1, room2);
         }

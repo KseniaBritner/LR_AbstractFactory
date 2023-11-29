@@ -14,9 +14,13 @@ namespace Maze
         private Room _room2;
         public Door (Room room1, Room room2)
         {
-            if (room1 == null || room2 == null)
+            if (room1 == null)
             {
-                throw new ArgumentNullException("Комнаты не существует");
+                throw new ArgumentNullException($"Комнаты {room1.Number} не существует");
+            }
+            if (room2 == null)
+            {
+                throw new ArgumentNullException($"Комнаты {room2.Number} не существует");
             }
             _isOpen = Rnd.Next(2) == 0;
             _room1 = room1;
@@ -54,9 +58,13 @@ namespace Maze
         }
         public void Initialize(Room room1, Room room2)
         {
-            if (room1 == null || room2 == null)
+            if (room1 == null)
             {
-                throw new ArgumentNullException("Комнаты не существует");
+                throw new ArgumentNullException($"Комнаты {room1.Number} не существует");
+            }
+            if (room2 == null)
+            {
+                throw new ArgumentNullException($"Комнаты {room2.Number} не существует");
             }
             _room1 = room1;
             _room2 = room2;

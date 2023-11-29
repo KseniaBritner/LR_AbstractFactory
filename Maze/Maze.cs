@@ -28,7 +28,7 @@ namespace Maze
         }
         public Mazze Clone()
         {
-            return new Mazze();
+            return new Mazze(); 
         }
     }
 }
