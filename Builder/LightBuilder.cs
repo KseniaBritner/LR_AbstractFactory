@@ -17,6 +17,10 @@ namespace Builder
             }
             return new RoomWithLight(roomNumber);
         }
+        public override Mazze GetMazze()
+        {
+            return maze;
+        }
 
     }
 }

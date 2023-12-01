@@ -10,8 +10,8 @@ namespace Builder
     {
         public static void Create(MazeBuilder build)
         {
-            build.BuildRoom(1);
-            build.BuildRoom(2);
+            build.RoomBuilder(1);
+            build.RoomBuilder(2);
             build.DoorBuilder(1, 2);
         }
     }

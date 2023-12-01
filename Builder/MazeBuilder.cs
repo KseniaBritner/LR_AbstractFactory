@@ -14,7 +14,7 @@ namespace Builder
         {
             maze = new Mazze();
         }
-        public virtual void BuildRoom(int roomNumber)
+        public virtual void RoomBuilder(int roomNumber)
         {
             if (roomNumber < 0)
             {
@@ -31,21 +31,21 @@ namespace Builder
         {
             if (roomNumber1 < 0)
             {
-                throw new ArgumentException("Номер комнаты должен быть неотрицательным.");
+                throw new ArgumentException("Номер комнаты должен быть неотрицательным.",nameof(roomNumber1));
             }
             if (roomNumber2 < 0)
             {
-                throw new ArgumentException("Номер комнаты должен быть неотрицательным.");
+                throw new ArgumentException("Номер комнаты должен быть неотрицательным.", nameof(roomNumber2);
             }
             Room room1 = maze.RoomNo(roomNumber1);
             Room room2 = maze.RoomNo(roomNumber2);
-            if (room1 == null)
+            if (room1 == null) 
             {
-                throw new ArgumentException("Комнаты с указанным номером не существуют.");
+                throw new Exception($"Комнаты с {roomNumber1} номером не существуют.");
             }
             if (room2 == null)
             {
-                throw new ArgumentException("Комнаты с указанным номером не существуют.");
+                throw new Exception($"Комнаты с {roomNumber2} номером не существуют.");
             }
             Door door = new Door(room1, room2);
             room1.SetSide(Direction.East, door);
@@ -59,6 +59,11 @@ namespace Builder
             }
             return new Room(roomNumber);
         }
+        public virtual Mazze GetMazze()
+        {
+            return maze;
+        }
+
     }
 }
 
